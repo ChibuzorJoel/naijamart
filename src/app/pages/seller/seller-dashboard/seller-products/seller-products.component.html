@@ -1,0 +1,26 @@
+<h2>Manage Products</h2>
+
+<mat-form-field appearance="fill" class="full-width">
+  <mat-label>Product Name</mat-label>
+  <input matInput [(ngModel)]="productName" placeholder="Enter product name" />
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="full-width">
+  <mat-label>Price</mat-label>
+  <input matInput [(ngModel)]="productPrice" placeholder="Enter product price" type="number" />
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="full-width">
+  <mat-label>Product Category</mat-label>
+  <input matInput [(ngModel)]="productCategory" placeholder="Enter product category" />
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click)="addProduct()">Add Product</button>
+
+<h3>Your Products</h3>
+<mat-list>
+  <mat-list-item *ngFor="let product of products">
+    {{ product.name }} - {{ product.price | currency }} - {{ product.category }}
+  </mat-list-item>
+</mat-list>
+

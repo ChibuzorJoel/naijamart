@@ -1,0 +1,179 @@
+.about-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #333;
+  }
+  
+  .about-header h1 {
+    font-size: 2.5rem;
+    color: #3f51b5;
+  }
+  
+  .about-header p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .about-content section {
+    margin-top: 20px;
+  }
+  
+  .about-content h2 {
+    font-size: 1.8rem;
+    color: #303f9f;
+  }
+  
+  .about-content p,
+  .about-content ul {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .about-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+  }
+  /* General Page Styling */
+.about-page {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background: url('../../../assets/img/lesly-juarez-egEMG-SafrY-unsplash.jpg') no-repeat center center/cover;
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  
+  .hero-section .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-section p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  /* Mission Section */
+  .mission-section {
+    padding: 40px 20px;
+    background: #f9f9f9;
+    text-align: center;
+  }
+  
+  .mission-section h2 {
+    font-size: 2rem;
+    color: #3f51b5;
+    margin-bottom: 20px;
+  }
+  
+  .mission-section p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Features Section */
+  .features-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background: #fff;
+  }
+  
+  .feature {
+    text-align: center;
+    max-width: 300px;
+  }
+  
+  .feature i {
+    font-size: 3rem;
+    color: #3f51b5;
+    margin-bottom: 15px;
+  }
+  
+  .feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .feature p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Why Choose Section */
+  .why-choose-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f1f1f1;
+  }
+  
+  .why-choose-section h2 {
+    font-size: 2rem;
+    color: #303f9f;
+    margin-bottom: 20px;
+  }
+  
+  .why-choose-section p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+  }
+  
+  .why-choose-section .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: white;
+    background-color: #3f51b5;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .why-choose-section .btn:hover {
+    background-color: #303f9f;
+  }
+  /* Smooth transitions for elements */
+.feature,
+.hero-section .overlay,
+.mission-section,
+.why-choose-section {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect for Features */
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Hover Effect */
+.why-choose-section .btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.why-choose-section .btn:hover {
+  background-color: #303f9f;
+  transform: scale(1.05);
+}

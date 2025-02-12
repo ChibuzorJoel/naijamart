@@ -1,0 +1,99 @@
+<app-header></app-header>
+<div class="home-container">
+  <!-- Header Section -->
+  <!-- Welcome Section with Carousel -->
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="height: 800px;">
+        <img src="../../../assets/img/pexels-raman-deep-424054-1102292.jpg" class="d-block w-100 carousel-img animate-slideIn" alt="Slide 1">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+          <h2 class="custom-caption-title animate-zoomIn">Welcome to NaijaMart</h2>
+          <p class="custom-caption-text animate-fadeInUp">Your trusted platform for connecting local sellers to global buyers.</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="height: 800px;">
+        <img src="../../../assets/img/farmwr.jpeg" class="d-block w-100 carousel-img animate-slideIn" alt="Slide 2">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+          <h2 class="custom-caption-title animate-zoomIn">Shop Local</h2>
+          <p class="custom-caption-text animate-fadeInUp">Empowering communities by showcasing local products.</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="height: 800px;">
+        <img src="../../../assets/img/lesly-juarez-egEMG-SafrY-unsplash.jpg" class="d-block w-100 carousel-img animate-slideIn" alt="Slide 3">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+          <h2 class="custom-caption-title animate-zoomIn">Discover Authenticity</h2>
+          <p class="custom-caption-text animate-fadeInUp">Explore unique and original products made in Nigeria.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  
+  
+<!-- Featured Products Section -->
+<section class="featured-products">
+  <h2>Featured Products</h2>
+  <div class="product-grid mb-3">
+    <div class="product-card" *ngFor="let product of paginatedProducts">
+      <img [src]="product.imageUrl" alt="{{ product.name }}" />
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p class="price">NGN {{ product.price }}</p>
+      
+    </div>
+  </div>
+  <mat-paginator
+    [length]="featuredProducts.length"
+    [pageSize]="3"
+    [pageSizeOptions]="[3, 6, 9]"
+    (page)="onPageChange($event)"
+    #paginator>
+  </mat-paginator>
+  <div class="view-all">
+    <button mat-raised-button color="accent" routerLink="/products">View All Products</button>
+  </div>
+</section>
+
+<img src="../../../assets/img/" alt="">
+  <!-- Why Choose NaijaMart -->
+  <section class="why-choose bg-primary">
+    <h2>Why Choose NaijaMart?</h2>
+    <div class="benefits">
+      <div class="benefit-card">
+        <h3>Support Local</h3>
+        <p>Buy unique, handmade, locally crafted products directly from Nigerian artisans and businesses.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Secure Transactions</h3>
+        <p>Our platform ensures secure payment integration for a smooth shopping experience.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Global Reach</h3>
+        <p>Sell your products to a global audience and expand your business beyond borders.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <div class="call-to-action">
+    <div class="cta-content">
+      <h2>Ready to Explore?</h2>
+      <p>Join NaijaMart today and start shopping or selling.</p>
+      <div class="cta-buttons">
+        <button mat-raised-button color="accent" routerLink="/buyer-dashboard">Start Shopping</button>
+        <button mat-raised-button color="primary" routerLink="/register">Become a Seller</button>
+      </div>
+    </div>
+  </div>
+  
+
+ 
+ <app-footer></app-footer>
+ 
+

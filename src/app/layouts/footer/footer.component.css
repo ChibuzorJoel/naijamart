@@ -1,0 +1,31 @@
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 40px;
+    border-radius: 8px;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    font-size: 24px; /* Size of the icons */
+  }
+  
+  .social-icons i {
+    color: #3b5998; /* Default color for Facebook */
+  }
+  
+  .social-icons a:hover i {
+    color: #1da1f2; /* Change color on hover */
+  }
+  
+  .social-icons a:nth-child(2) i {
+    color: #1da1f2; /* Default color for Twitter */
+  }
+  
+  .social-icons a:nth-child(3) i {
+    color: #e4405f; /* Default color for Instagram */
+  }
+  

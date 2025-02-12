@@ -1,0 +1,268 @@
+/* General Styles */
+.home-container {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; /* Light background for the home container */
+}
+
+.content {
+  margin-top: 50px;
+  text-align: center;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow and rounded corners */
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3f51b5; /* Toolbar background */
+  color: white;
+  padding: 10px;
+}
+
+/* Section Styles */
+.featured-products, .categories, .why-choose, .testimonials, .call-to-action {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fafafa;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow and rounded corners */
+}
+
+.product-grid, .category-grid, .benefits {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-card, .category-card, .benefit-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 30%;
+  text-align: center;
+}
+
+.product-card:hover, .category-card:hover, .benefit-card:hover {
+  transform: translateY(-5px); /* Hover effect for cards */
+}
+
+.product-card img {
+  width: 100%;
+  height: 300px; /* Set a fixed height for consistency */
+  object-fit: cover; /* Ensures the image fills the container without distortion */
+  border-radius: 8px;
+}
+.product-card h3, .category-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+
+mat-paginator {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.product-card .price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.view-all {
+  margin-top: 20px;
+  text-align: center; /* Centers the button horizontally */
+}
+
+.view-all button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #3f51b5; /* Matches your theme */
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.view-all button:hover {
+  background-color: #303f9f; /* Hover effect */
+}
+
+
+
+
+.social-icons mat-icon {
+  margin: 0 10px;
+  font-size: 24px;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-card, .category-card, .benefit-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  mat-toolbar {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Carousel */
+.carousel-inner {
+  height: 800px;
+}
+
+.carousel-img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  bottom: unset;
+}
+
+/* Text Styles */
+.custom-caption-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.custom-caption-text {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply Animations */
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.animate-zoomIn {
+  animation: zoomIn 1s ease-in-out;
+}
+
+.animate-slideIn {
+  animation: slideIn 1s ease-in-out;
+}
+.call-to-action {
+  background: linear-gradient(to bottom right, #3f51b5, #2196f3);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.call-to-action h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.call-to-action p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.cta-buttons button {
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}

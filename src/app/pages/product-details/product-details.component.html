@@ -1,0 +1,13 @@
+<app-header></app-header>
+<section *ngIf="product" class="product-detail">
+    <h1>{{ product.name }}</h1>
+    <img [src]="product.image" alt="{{ product.name }}" class="product-image" />
+    <p>{{ product.description }}</p>
+    <p class="price">Price: NGN {{ product.price }}</p>
+    <button mat-raised-button color="accent" routerLink="/">Back to Products</button>
+  </section>
+  
+  <section *ngIf="!product">
+    <p>Product not found.</p>
+  </section>
+<app-footer></app-footer>

@@ -1,0 +1,84 @@
+<div class="seller-dashboard">
+  <mat-toolbar color="primary">
+    <span>Seller Dashboard</span>
+  </mat-toolbar>
+
+  <div class="dashboard-container">
+    <mat-sidenav-container class="sidenav-container">
+      <mat-sidenav #sidenav mode="side" opened class="sidenav">
+        <mat-nav-list>
+          <mat-list-item routerLink="/seller/dashboard/seller-products" routerLinkActive="active-link">
+            <mat-icon>inventory</mat-icon>
+            <span>Manage Products</span>
+          </mat-list-item>
+          <mat-list-item routerLink="/seller/dashboard/orders" routerLinkActive="active-link">
+            <mat-icon>shopping_cart</mat-icon>
+            <span>Orders</span>
+          </mat-list-item>
+          <mat-list-item routerLink="/seller/dashboard/overview" routerLinkActive="active-link">
+            <mat-icon>dashboard</mat-icon>
+            <span>Overview</span>
+          </mat-list-item>
+          <mat-list-item routerLink="/seller/dashboard/settings" routerLinkActive="active-link">
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
+          </mat-list-item>
+          <mat-list-item routerLink="/seller/dashboard/support" routerLinkActive="active-link">
+            <mat-icon>help</mat-icon>
+            <span>Support</span>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content class="sidenav-content">
+        <div class="content-header">
+          <h2>Welcome, Seller!</h2>
+          <p>Manage your products, track orders, and grow your business with NaijaMart.</p>
+        </div>
+
+        <div class="stats-overview">
+          <mat-card class="stat-card">
+            <mat-icon color="primary">inventory_2</mat-icon>
+            <h3>10</h3>
+            <p>Products Listed</p>
+          </mat-card>
+
+          <mat-card class="stat-card">
+            <mat-icon color="primary">shopping_basket</mat-icon>
+            <h3>5</h3>
+            <p>Orders Pending</p>
+          </mat-card>
+
+          <mat-card class="stat-card">
+            <mat-icon color="primary">attach_money</mat-icon>
+            <h3>&#8358;50,000</h3>
+            <p>Sales This Month</p>
+          </mat-card>
+        </div>
+
+        <div class="features-section">
+          <h3>Quick Actions</h3>
+          <div class="quick-actions">
+            <mat-card class="action-card" (click)="navigateTo('add-product')">
+              <mat-icon color="accent">add_circle</mat-icon>
+              <p>Add New Product</p>
+            </mat-card>
+
+            <mat-card class="action-card" (click)="navigateTo('sales-report')">
+              <mat-icon color="accent">bar_chart</mat-icon>
+              <p>View Sales Report</p>
+            </mat-card>
+
+            <mat-card class="action-card" (click)="navigateTo('promotions')">
+              <mat-icon color="accent">campaign</mat-icon>
+              <p>Create Promotions</p>
+            </mat-card>
+          </div>
+        </div>
+
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>
+
