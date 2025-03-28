@@ -28,9 +28,10 @@
     <div class="user-controls d-flex align-items-center">
       <a href="/login" class="btn btn-outline-light">Login</a>
       <a href="/register" class="btn btn-outline-light">Register</a>
-      <button class="btn btn-light rounded-circle">
-        <i class="bi bi-cart"></i>
+      <button class="btn btn-light rounded-circle" routerLink="/cart">
+        <i  class="bi bi-cart">{{ cartCount }}</i>
       </button>
+      
       <button class="btn btn-light rounded-circle">
         <i class="bi bi-search"></i>
       </button>

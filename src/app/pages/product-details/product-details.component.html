@@ -4,7 +4,7 @@
     <img [src]="product.image" alt="{{ product.name }}" class="product-image" />
     <p>{{ product.description }}</p>
     <p class="price">Price: NGN {{ product.price }}</p>
-    <button mat-raised-button color="accent" routerLink="/">Back to Products</button>
+    <button mat-raised-button color="accent" routerLink="/products">Back to Products</button>
   </section>
   
   <section *ngIf="!product">

@@ -45,9 +45,15 @@
                 <small class="error text-danger">Message is required.</small>
               </div>
             </div>
-          
+           <!-- Success & Error Messages -->
+           <div class="alert alert-success fade-in" *ngIf="mailSuccess">
+            ✅ Thank you! Your message has been sent.
+          </div>
+          <div class="alert alert-danger fade-in" *ngIf="mailFailed">
+            ❌ Error! Your message could not be sent. Please try again.
+          </div>
             <!-- Submit Button -->
-            <button type="submit" [disabled]="contactForm.invalid" class="btn btn-primary">Submit</button>
+            <button type="submit" [disabled]="" class="btn btn-primary">Submit</button>
           </form>
           
           

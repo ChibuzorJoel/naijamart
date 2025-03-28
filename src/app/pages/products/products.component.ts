@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from 'src/app/shared/cart.service';
 
 @Component({
   selector: 'app-products',
@@ -450,7 +451,11 @@ export class ProductsComponent {
   
   categories: string[] = ['Crafts', 'Textiles', 'Food','Beauty','Fashion','Accessories'];
   filteredProducts = [...this.products];
+  constructor(private cartService: CartService) {}
 
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+  }
   ngOnInit(): void {}
 
   onSearch(event: any): void {
@@ -467,8 +472,5 @@ export class ProductsComponent {
       : [...this.products];
   }
 
-  addToCart(product: any): void {
-    console.log(`Added ${product.name} to cart!`);
-    // Implement actual cart functionality
-  }
+ 
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { ContactService } from 'src/app/shared/contact.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -8,8 +8,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactComponent {
   contactForm: FormGroup;
-
-  constructor(private fb: FormBuilder) {
+  mailSuccess = false;
+  mailFailed = false;
+  isSubmitting = false;
+  
+  constructor(private fb: FormBuilder, private contactService: ContactService) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -22,16 +25,31 @@ export class ContactComponent {
     return this.contactForm.controls;
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.contactForm.valid) {
-      console.log('Contact Form Submitted:', this.contactForm.value);
-
-      // Reset the form after submission
-      this.contactForm.reset();
-
-      alert('Thank you for reaching out! We will get back to you soon.');
-    } else {
-      alert('Please fill in all the fields correctly before submitting.');
+      this.isSubmitting = true;
+      try {
+        await this.contactService.sendMessage(this.contactForm.value).toPromise(); // Send to Firebase
+        this.mailSuccess = true;
+        this.mailFailed = false;
+        console.log('Email sent successfully!');
+        this.contactForm.reset();
+      } catch (error) {
+        this.mailSuccess = false;
+        this.mailFailed = true;
+        console.error('Failed to send email:', error);
+      } finally {
+        this.isSubmitting = false;
+      }
     }
+  }
+
+  sendEmail(data: any): Promise<void> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (Math.random() > 0.5) resolve();
+        else reject('Email sending failed due to server error.');
+      }, 1000);
+    });
   }
 }

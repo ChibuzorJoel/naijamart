@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularMaterialModule } from './shared/angular-material.module';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http'; 
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +22,7 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ContactService } from './shared/contact.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { ContactComponent } from './pages/contact/contact.component';
     ProductDetailsComponent,
     ProfileComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -47,9 +50,10 @@ import { ContactComponent } from './pages/contact/contact.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
